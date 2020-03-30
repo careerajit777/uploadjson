@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "b2434beb-1d7a-4dd2-84ac-4b68d18121e6",
+		"name": "getSBU_Devl_Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TC_6_SBU_id_blank",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnBQX2JQYlRhdXpXdEJVdXZkMTJta0luaEVSVnhpYXBYbWhDUUg0MDlrUlkiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MTQ4NywiZXhwIjoxNTg1NTU1MDg3LCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.ooD-EwM0C9DNQhF6655fz8Iw-yQjsbI5D1kEFa2x9_s7aIsj2FIws5LHxGBwfeU-NHODyN4TviSRAI5WuKd4EtNMvYbyjTO4fNEjjAcZq_b0Hhm8GxtfUVCrtu8lhh7JPeBiAXLHBGXeo9q2a0nREePXkLPdw6buDIUEi_X5E_rjLFoahWv-HJ3OviC6pCcGhOPho7lduq_8rHcPDwvORqL6f-StIP0F9K8m9O458d7ZGvR1pkIT1urzbn90MesHTL8_PmYOx4F_2eHRVK5DEwGS9YfLKlUFN-4-sJANqRMezTLmD-hB9aRyJJqgV40gLlC-Zjn2pTG7loleoLxihQ",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": 21692\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_4_only_sbu_id",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlo3MTcydlp4MENfZk80aFpDNEh1TE1SY1pEYTFiZlFyN0tnQTVJdkpWS3MiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MjIwNSwiZXhwIjoxNTg1NTU1ODA1LCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.gRgHH2r17_Q159UAtN_uRrx3LYSY_gfyJmpo_hWiMOrJxV2bx1hlIYM2KJRQMAcypmHLHt-dIbBJC-Ki9bS36ii-gUJeF0mILdRD2ZtaJgXPtmAKD8YrGFhjvtQWMIKiZL5oV4yPUfvIYfJXn6f_18IiicxGEmtNDsGW3f4mHkwlAITN7hCM2xrohJYIvxKRyrLH7XYGgpOEh3GU0cZLC7DkLFerMXx9tNdX4yTBtW-pGX12HQeiwHS6CYdpKEmHGQYiGxjbRhHcGL9bYlN6eEqw9MM8C-cH5PdnsOBC10acIwKmjHgTlGRV676kBzf3dLgZ_buN_BLmBPvXUEcc2g",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"A000\",\r\n      \"sbuKey\": \"\"\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_5_SBU_id_validation",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkR5R3lKVmw2QmdaLThqczFFSkNHQzRFeTB3MTAtRzVKV01xLWl4eFhTUnciLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MjI4OSwiZXhwIjoxNTg1NTU1ODg5LCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.JGUw85sU3g_sPzXnawuJHRJl3zyUdBCC2na9rbz4U1EDY_muNEoSF4mSKGXi_nlVerTTZqVccJAYji5HxFANtGpq9emtYU9MikID4DQwajt1fY63hxqAiq0q3rshCWnGS37_JgA6fK3QmNN78AVDr6M-0NGpARg7yUUO6bAO-PESHuK2E_HHgk1YiT_WYeGIaH0FqnQmaYvjwCEsuNS4zyJmCFz4lTP_I-fxeU437jhpv4nexcRZ3wGUkpEBMM_HKDJkqCnxbLYau3FD7MIywkFVCkTFEa7PjsFkhUI1-nEO-q0a4LdWZj4RrSD21IxZIxjy5wahaarMmLHBTn5xZQ",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"A0000\",\r\n      \"sbuKey\": \"\"\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_7_API_with_only_sbu_key",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULk9ZQUlQTzh0NTZLVzZqc0NuWm9wU3J3UWk3bDFiNEg2akRkQk44SzVHQlUiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MTYxMSwiZXhwIjoxNTg1NTU1MjExLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.PsbH5Ru1fYH3TWAEoDvvTDa5kCqOLSBZ1GnZTEzqCDHdsxBmU5NisTUjZKwwgvOz04LmQQ2-_kNWh4pr5uOFTaZP4tRvmGntWR7_eo6j1mTThC61iasq3H5g9QQ3vm-75KMdIsIAjIRxhTfx8fPECobD19C8g6RpDt7ONTzUHCKzgBlDtNZWWC9XbHrEI6fj39VQSGsbjaj-dJp9g3CWV9VsUVx9IM_OAPF21dhfpwnXHRG3JF390RrQ-YR7QDX3xHjImis2ZrEwcxTOHSfZuSMMoMCMw6fiFd2yNJ4Z2Q-gjLBeQbBJnPDOMdy7qtTyfK7isbw2nzY0whg_rUjCEQ",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": 21692\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_8_API_with_wrong_sbu_key",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnU1YnZJTlZGQjk4c2cyUjlHTDFMYVJCcnFlN2FEaE9xalRKcU1qRkQ0OHMiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MTc4MywiZXhwIjoxNTg1NTU1MzgzLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.EXdsIXHczeYqPPWgecio4ru9a-qKsG1agHZlgye3GkQaOMNlncYdhfOLHAp0vmFR1zFbZWHCvEiqylj7-eB-7PC2xTnZEthpZj0AdiS8e6JfteoyiNWATz6oid1SLwMdz1CMsyWrEDx_ZOCmYIYqA25vu1KzQK_RUHHKpB30HlSxDPjlHvDlxxoIp-BFq863aFqySh82v02hU5o5He-v_5IbKamZkLR5uuxuNiIc06sWO5lPbVzajcqJ9qF4JqTmFwryG6b6LtNpeTcOEEFsDN9M3bqa6px-O8bdNwTiEElUGYis3UStq8cpr5JTZIytfBAhsauf7Lp0oepJh_o6AQ",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": 1234\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_9_API_with_no_sbu_key",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnJFbEVSM3VTYXRkTnYtQnpJUWhET25kNExZcVRyM01jRlpjMEg3eGg4b1kiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MTg0OSwiZXhwIjoxNTg1NTU1NDQ5LCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.E-9DW3oeIg_LSza4e8FzUz1QNJj93UHanp_XUyEvz1PyiOkbCYGbHozILDTK-pfPg_8ueak85ATBlzeNdvodlRMT5ldfyw_k6M2dJRVekR70GmwwwYTYu_HW91Rj40LoO8T3fWcC_1XyixLVNa2vwlGlUCAWhNA3ED5oqXH3ay-fbhHBrN2rtPnSpQhYi_lZTk11RfGUS1R9MEpIh8ufTGRaEryd-LB7Zk8gVHDhh0MvqgeIoCXo0Oyb0YK_-IwNWlk-O_45TyqBM0kR-TrifOJRWracA0rHuQf0OnTz7hhs642b4SD5Ej2SxwxEiboMwG-0D0A7ohf_L3pzq50_Kg",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"A000\",\r\n      \"sbuKey\": \"\"\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_10_API_with_no_sbu_id_no_sbu_key",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkJpOUFyMVo3bDE3RDYzeHZvWC1teThTcHBtbktjMThOejUxcV8yVnlGSEEiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MTkwOSwiZXhwIjoxNTg1NTU1NTA5LCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.j7vBIKImdGSXjJs2BgMME81QBS73ySjiPskdDeEQBEeHxJOp7OXS7726RZFvS8mi1Pev4gJ3Zm7hXs8jVt-9JZIJYxPtdwBOTLVhmzTyKP6kIv4w504lBHxsDncgcxxzE5UI1EponSIWr2lKSP7S-Ejwnt4Mq2N6Vf6PsH78ManUmljUj6iJtUosawjPI8j1mwsueSDucnDyEvdQ2Dvij7zOez1mKdvaEpfKblky4k_cyjd8MNyS7Wl5ErMUiraKHIo3KlIG9SndR5v_fQNOWspXfRZ1iekai_SxFvHbBhzIoUC-3XgSy5jVWtUe7Ei1U9F9OMZnRS5hdLlsyrr8fQ",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": \"\"\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_11_API_with_wrong_sbu_id_wrong_sbu_key Copy",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULldkSGo1SHlkZzRhN2JvSWs5Q1pSYmpOTjhxcDhaVEVxSERrZkc0ZmEwQVEiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MTk2MCwiZXhwIjoxNTg1NTU1NTYwLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.VhlUazDEBNaI9uM5HLWwtPYWixJ6uUUS8qwoMSwyG4Gm5S68uG0zqZuj7qUS1-vfcOSUzF4oG4ue_D2rMhMy5QieEZxihIa7gorXw4q_3ERJeRqw_AOz6m0NLZulI1xpfyEbnz73n54PCdocrVZ9uLiiD9gVy4sZS1Z2R-nwXWrKt-q3lo-CTYyO_F9Sb680dzv35lBdF_S1MkOziHImNYA9RYTbNyJgB9b2UT914q5h99gJJPEkCfiPhZMkFn79LP9rD7Vrn9eL-U82PwbT1mocCzXzN7XA7vCvtyoOPBWtwlTqk5UM9GJbUkRfim976SXc3VNEJ5QPzErijKfRBA",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"Afff\",\r\n      \"sbuKey\": 2345\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_12_NA_API_with_wrong_spell_of_sbuIdentifier",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlhRMmdhRjAtR3cyZzdhdjMzSEdLbW9ESnk0Vmotb2FjLW82OEJ1cDV1Q2ciLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTMxNTA1MiwiZXhwIjoxNTg1MzE4NjUyLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.I7YzWYVg_H1c5yQY5P_t9UnT5TtOtD3QpX3iaUw18M4hj6AKyAAXLIld62jOWjstrNuMOVikssCMOzXXQlmdFZqTcyks3Ppf6YC9EelAQMLAj8TJmWX61ZasuYcugiyDYJJtEFP77yG1t0ta6m3C7wUFLqQEFLyfFWIJTuLtH_SSHuUwfGJh4rHHaAOEio1jIvollkGzHapheAJyHu4EQIQ_Ul207xb1ukagupGEOmtk5Nk5QwV7MarK6NRcdqoXkwgpIcfOXYmvatiPu22qIHKcBxc-xXvhCo-RmXk4gyKBOYfitE4UOIN5uJeTLVIDUAb4A2dHj_dWJ4kgW8ts5Q",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": 21692\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_13_NA_API_with_wrong_spell_of_sbu_id",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlhRMmdhRjAtR3cyZzdhdjMzSEdLbW9ESnk0Vmotb2FjLW82OEJ1cDV1Q2ciLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTMxNTA1MiwiZXhwIjoxNTg1MzE4NjUyLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.I7YzWYVg_H1c5yQY5P_t9UnT5TtOtD3QpX3iaUw18M4hj6AKyAAXLIld62jOWjstrNuMOVikssCMOzXXQlmdFZqTcyks3Ppf6YC9EelAQMLAj8TJmWX61ZasuYcugiyDYJJtEFP77yG1t0ta6m3C7wUFLqQEFLyfFWIJTuLtH_SSHuUwfGJh4rHHaAOEio1jIvollkGzHapheAJyHu4EQIQ_Ul207xb1ukagupGEOmtk5Nk5QwV7MarK6NRcdqoXkwgpIcfOXYmvatiPu22qIHKcBxc-xXvhCo-RmXk4gyKBOYfitE4UOIN5uJeTLVIDUAb4A2dHj_dWJ4kgW8ts5Q",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": 21692\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_14_NA_API_with_wrong_spell_of_sbuKey",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlhRMmdhRjAtR3cyZzdhdjMzSEdLbW9ESnk0Vmotb2FjLW82OEJ1cDV1Q2ciLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTMxNTA1MiwiZXhwIjoxNTg1MzE4NjUyLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.I7YzWYVg_H1c5yQY5P_t9UnT5TtOtD3QpX3iaUw18M4hj6AKyAAXLIld62jOWjstrNuMOVikssCMOzXXQlmdFZqTcyks3Ppf6YC9EelAQMLAj8TJmWX61ZasuYcugiyDYJJtEFP77yG1t0ta6m3C7wUFLqQEFLyfFWIJTuLtH_SSHuUwfGJh4rHHaAOEio1jIvollkGzHapheAJyHu4EQIQ_Ul207xb1ukagupGEOmtk5Nk5QwV7MarK6NRcdqoXkwgpIcfOXYmvatiPu22qIHKcBxc-xXvhCo-RmXk4gyKBOYfitE4UOIN5uJeTLVIDUAb4A2dHj_dWJ4kgW8ts5Q",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": 21692\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_15_API_with_multiple_sbuIdentifier_2",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnAzTHE3bDZWWGNiYjdwYlc1ZkM4OThtZ2VDVlFleE55bHVDblFiWUJhNjAiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU0OTMzMCwiZXhwIjoxNTg1NTUyOTMwLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.ZdU3l0wjsv53YM3GGWUR-ifezcJVyBRAMhYdqKJBiTPI8VNukOBJeQ5WgXvjfcuwJ8nhs9YoEif4NXOH30hzBAmqIF2ToN4KIvQVyakMyw7SH5Zi-5hkdH_TLZVr1iwseLO1OLwXqeNDzuqSi2dU-t7K1AsDdKC0WEVkGcmVaC03jSstDsHZT0sn13_Yw5kue5s3uiJ3XrmDwbiBjRETK_FZXQH_zCrcL0d6acFVno6tSAwFz1iVAfnjEN8_v0paTdUo4PBYD9m6VQuBgul8vquWWn5Ez616ha0dRd0hVlWk4P_nggz-hA-DpiiGjcdM-S9pRxPEw1bniY0vcLHmrg",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"A000\",\r\n      \"sbuKey\": \"21692\"\r\n    },\r\n    {\r\n      \"sbuID\": \"S000\",\r\n      \"sbuKey\": \"23400\"\r\n    },\r\n     {\r\n      \"sbuID\": \"P000\",\r\n      \"sbuKey\": \"23233\"\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC_15_API_with_multiple_sbuIdentifier_Validation",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "eyJraWQiOiI2Z3Z2dDlnLVJlOGZZcW8tcDA4S3VlMldGckdMQzYySUlzVkFEUHNVdVpJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULjdGem02VmRNYzhMNFRDZkl6cFV4R0JpakNCTkZkd081RTcxMFkyYWI4c0EiLCJpc3MiOiJodHRwczovL3Nzby1kZXYuam9obmRlZXJlLmNvbS9vYXV0aDIvYXVzaTd5c29tdE8xT1d6VmkwaDciLCJhdWQiOiJlbnRlcnByaXNlLWRldiIsImlhdCI6MTU4NTU1MDY5MCwiZXhwIjoxNTg1NTU0MjkwLCJjaWQiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyIsInNjcCI6WyJlbnRlcnByaXNlLWRldiJdLCJzdWIiOiIwb2FqZHd3bWN6MHhBY0R6NTBoNyJ9.aO9PkLQFzXbZUl_5qsT7ExQdYVq9cDLOMysRHgOmIDsk5jFKHZNXJlpJlUT4Y8nNs3vVgoSfsNZGLoTeYaQt6RAlYsUmEDUWXp1c7toV5tBKvTL6vHkcU_z5fGez5H-k-VcSszV1ln4j1i-QLGks-3laTZhRHcn9QENFX7Bkq-8hOS7ERZ1adB5Ukf3ZgpNSJfRs3tMIfrjzoPKg2cBT5heMuSBKgYCXXYuGEE11v5c-i29AvE0V_qMoEkvLgkNrkkZpmhaODnghF_EiSArEAn0_K4EVqklYJfaDE4hcLE1AsLYkzLKbrokj7fxuNsRRdDEz9xAsC2CO6Z-HV2iIwg",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sbuIdentifier\": [\r\n    {\r\n      \"sbuID\": \"A000\",\r\n      \"sbuKey\": \"21692\"\r\n    },\r\n    {\r\n      \"sbuID\": \"S000\",\r\n      \"sbuKey\": \"23400\"\r\n    },\r\n     {\r\n      \"sbuID\": \"\",\r\n      \"sbuKey\": \"\"\r\n    }\r\n  ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://mdmdealer.devl-vpn.us.e18.c01.johndeerecloud.com/v1/sbu",
+					"protocol": "https",
+					"host": [
+						"mdmdealer",
+						"devl-vpn",
+						"us",
+						"e18",
+						"c01",
+						"johndeerecloud",
+						"com"
+					],
+					"path": [
+						"v1",
+						"sbu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
